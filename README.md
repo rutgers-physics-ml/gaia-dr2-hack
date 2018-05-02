@@ -89,14 +89,12 @@ authenticate yourself and use the Jupyter notebook.
 ## Gaia DR2 Data
 
 ### The Gaia archives
-
 The archive can be found [here](https://gea.esac.esa.int/archive/). The "basic" 
 section of the search is fairly self-explanatory. There are lots of display 
 columns you can choose from (i.e., information you care about), and if you want 
 to narrow down your search you can add conditions.
 
 ### Querying with ADQL
-
 If you want more control (or, for example, to increase the maximum number of 
 results from what the basic version allows), you need to use ADQL, the 
 astronomical data query language. Below is an example usage:
