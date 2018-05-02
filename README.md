@@ -49,10 +49,9 @@ stop the notebook at any time by using the keyboard command `<Ctrl-c>`.
 
 ### Accessing notebooks remotely
 Suppose that you want to have a remote computer, such as `gradserv`, serve
-up a Jupyter notebook. Rather than forward the X windowing, you can have 
-the remote computer forward it to a port which is being "listened to" by
-your local machine. In general, this is done by running `ssh` into the 
-remote machine like such:
+up a Jupyter notebook. This can be accomplishing by "listening in" to a 
+remote server port on your local machine. If you want to do this, then
+first log in to your remote machine:
 
     ssh username@gradserv.physics.rutgers.edu
 
@@ -80,5 +79,48 @@ Better yet, copy and paste that link from your first terminal window, which
 should look something like `http://localhost:8890/?token=<.......>`. Change
 the port number to `8889` and open this in your local browser in order to
 authenticate yourself and use the Jupyter notebook.
+
+
+## Gaia DR2 Data
+
+## Querying the Gaia Archive
+
+The archive can be found [here](https://gea.esac.esa.int/archive/). The "basic" 
+section of the search is fairly self-explanatory. There are lots of display 
+columns you can choose from (i.e., information you care about), and if you want 
+to narrow down your search you can add conditions.
+
+## Querying with ADQL
+
+If you want more control (or, for example, to increase the maximum number of 
+results from what the basic version allows), you need to use ADQL, the 
+astronomical data query language. Below is an example usage:
+
+`SELECT TOP 500000 source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val FROM gaiadr2.gaia_source  WHERE (ra>=23.5 AND ra<=26.5 AND dec>=85.5 AND dec<=87.5)`
+
+Let's break down what this is doing:
+
+    SELECT TOP 500000
+
+This is telling it to limit the results of the query to 500000 sources.
+
+    source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val
+
+This is a list of the desired columns of information, including the source ID, 
+the ra and dec, parallax, etc.
+
+    FROM gaiadr2.gaia_source
+
+This is the data archive within which you are searching. For Gaia DR2, this 
+is what you want.
+
+    WHERE (ra>=23.5 AND ra<=26.5 AND dec>=85.5 AND dec<=87.5)
+
+These are the conditions you want. I've applied simple right ascension and 
+declination limits. There are lots of other conditions, each one corresponding 
+to possible display columns. For example, I could say `WHERE (parallax>=.5)`,
+which would limit me to sources with parallax greater than 0.5 arcseconds, or 
+equivalently at distances of less than 2 pc. For more examples, see 
+the [archive help page](http://gea.esac.esa.int/archive-help/index.html)
 
 
