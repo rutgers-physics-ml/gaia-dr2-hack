@@ -4,6 +4,11 @@ grad student Gaia DR2 hack session. The hack is 11 a.m. until 5 p.m.
 on Wednesday, May 9, 2018. Currently we are planning on hosting it
 in Serin 401W.
 
+
+## Table of Contents
+1. [Getting started](#getting-started)
+2. [Gaia DR2 data](#gaia-dr2-data)
+
 ## Getting started
 Please download or clone the repository using:
 
@@ -27,14 +32,14 @@ Install the rest of the packages by running:
 These packages have now been installed on your system, to a virtual
 environment in Anaconda Python named `gaia-hack`.
 
-## Python virtual environments
+### Python virtual environments
 You will need to *activate* the `gaia-hack` environment before executing 
 any code or serving any Jupyter notebooks. This can be accomplished by 
 running:
 
     source activate gaia-hack
 
-## Jupyter notebooks
+### Jupyter notebooks
 You can view execute Jupyter notebooks (formerly IPython notebooks) by 
 running the command:
 
@@ -47,7 +52,7 @@ You can specify a browser type or port number by using the flags
 At this point, Jupyter will serve a notebook at `localhost:8888`. You can 
 stop the notebook at any time by using the keyboard command `<Ctrl-c>`.
 
-### Accessing notebooks remotely
+#### Accessing notebooks remotely
 Suppose that you want to have a remote computer, such as `gradserv`, serve
 up a Jupyter notebook. This can be accomplishing by "listening in" to a 
 remote server port on your local machine. If you want to do this, then
@@ -83,14 +88,14 @@ authenticate yourself and use the Jupyter notebook.
 
 ## Gaia DR2 Data
 
-## Querying the Gaia Archive
+### Querying the Gaia Archive
 
 The archive can be found [here](https://gea.esac.esa.int/archive/). The "basic" 
 section of the search is fairly self-explanatory. There are lots of display 
 columns you can choose from (i.e., information you care about), and if you want 
 to narrow down your search you can add conditions.
 
-## Querying with ADQL
+### Querying with ADQL
 
 If you want more control (or, for example, to increase the maximum number of 
 results from what the basic version allows), you need to use ADQL, the 
