@@ -100,7 +100,13 @@ results from what the basic version allows), you need to use ADQL, the
 astronomical data query language. Below is an example usage:
 
 ```SQL
-SELECT TOP 500000 source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val FROM gaiadr2.gaia_source  WHERE (ra>=23.5 AND ra<=26.5 AND dec>=85.5 AND dec<=87.5)
+SELECT TOP 500000 
+    source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,
+    radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val 
+FROM 
+    gaiadr2.gaia_source  
+WHERE 
+    (ra>=23.5 AND ra<=26.5 AND dec>=85.5 AND dec<=87.5)
 ```
 
 Let's break down what this is doing:
@@ -112,7 +118,8 @@ SELECT TOP 500000
 This is telling it to limit the results of the query to 500000 sources.
 
 ```SQL
-source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val
+source_id,ra,ra_error,dec,dec_error,parallax,parallax_error,phot_g_mean_mag,bp_rp,
+radial_velocity,radial_velocity_error,phot_variable_flag,teff_val,a_g_val
 ```
 
 This is a list of the desired columns of information, including the source ID, 
@@ -133,7 +140,11 @@ These are the conditions you want. I've applied simple right ascension and
 declination limits. There are lots of other conditions, each one corresponding 
 to possible display columns. For example, I could say `WHERE (parallax>=.5)`,
 which would limit me to sources with parallax greater than 0.5 arcseconds, or 
-equivalently at distances of less than 2 pc. For more examples, see 
-the [archive help page](http://gea.esac.esa.int/archive-help/index.html)
+equivalently at distances of less than 2 pc. Note, by the way, that whitespace
+such as newlines or spaces do not affect the query.
+
+For more examples, see the 
+[archive help page](http://gea.esac.esa.int/archive-help/index.html)
+
 
 
