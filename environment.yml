@@ -1,0 +1,26 @@
+name: gaia-hack
+
+dependencies:
+  - python=3.6
+  - ipython
+  - jupyter
+  - numpy
+  - scipy
+  - matplotlib=2.1
+  - astropy
+  - astroml
+  - aplpy
+  - astroquery
+  - scikit-learn
+  - scikit-image
+  - tensorflow
+  - keras
+  - opencv
+  - tqdm
+  - pandas
+  - seaborn
+  - emcee
+  - corner
+  - keras
+  - h5py
+  - tensorflow

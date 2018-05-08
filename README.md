@@ -6,8 +6,8 @@ in Serin 401W.
 
 
 ## Table of Contents
-#### [Getting started](#getting-started)
-#### [Gaia data archives](#gaia-dr2-data)
+1. [Getting started](#getting-started)
+2. [Gaia data archives](#gaia-dr2-data)
 
 ## Getting started
 Please download or clone the repository using:
@@ -30,7 +30,8 @@ Install the rest of the packages by running:
     conda env create -f environment.yml
 
 These packages have now been installed on your system, to a virtual
-environment in Anaconda Python named `gaia-hack`.
+environment in Anaconda Python named `gaia-hack`. It took me about
+seven minutes to install these packages with an ethernet connection.
 
 ### Python virtual environments
 You will need to *activate* the `gaia-hack` environment before executing 
